@@ -1,0 +1,176 @@
+/* styles/ChartDetail.module.css */
+  
+  /* Container for entire page */
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Header (10vh) */
+  .header {
+    height: 10vh;
+    border-bottom: 3px dashed #a69f94;
+    background-color: #fdfaf3;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    box-shadow: 4px 4px 0 #d4cbbc;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 1px 1px 0 #eee;
+    color: #333;
+  }
+  
+  /* Main content (90vh) split into 40% (json) and 60% (images) */
+  .mainContent {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    box-sizing: border-box;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Left side: JSON panel (40%) */
+  .jsonPanel {
+    flex: 0 0 40%;
+    border: 3px dashed #a69f94;
+    background-color: #fdfaf3;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #d4cbbc;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .descriptionPanel {
+    flex: 0 0 20%;
+    border: 3px dashed #a69f94;
+    background-color: #fdfaf3;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #d4cbbc;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .jsonPanel h3, .descriptionPanel h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+    text-shadow: 1px 1px 0 #eee;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* The scrollable container for the Monaco Editor */
+  .jsonScroll {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 2px dashed #ccc;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  /* The Monaco Editor will fill 100% of .jsonScroll's width/height.
+     You can override or add more specific styling if needed. */
+  
+  /* Right side: image panel (60%) */
+  .imagePanel {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Each "wrapper" for the images includes a label + the zoom container */
+  .imageWrapper {
+    flex: 1;
+    border: 3px dashed #a69f94;
+    background-color: #fdfaf3;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #d4cbbc;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 40vh;
+    width: 37vw;
+  }
+  
+  .imageWrapper h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+    text-shadow: 1px 1px 0 #eee;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Container for the zoomable image */
+.zoomableImageContainer {
+    position: relative;
+    overflow: hidden; /* Prevent panning outside */
+    height: calc(40vh - 3.7rem); /* Matches the calculated scale height */
+    background-color: #fff;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    cursor: grab;
+  }
+  
+  /* On dragging, change cursor */
+  .zoomableImageContainer:active {
+    cursor: grabbing;
+  }
+  
+  .zoomableImageContainer img {
+    display: block;
+    transition: transform 0.1s ease-out; /* Smooth zoom/pan */
+  }
+  
+  /* Zoom control container */
+  .zoomControls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Zoom buttons */
+  .zoomButton {
+    width: 30px;
+    height: 30px;
+    background-color: #fdfaf3; /* Matches page style */
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #d4cbbc;
+    transition: all 0.2s ease;
+  }
+  
+  .zoomButton:hover {
+    background-color: #f2f2f2;
+    box-shadow: 3px 3px 0 #bbb;
+  }
+  
+  .zoomButton:active {
+    box-shadow: none;
+  }
+  

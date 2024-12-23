@@ -1,5 +1,6 @@
 // pages/index.js
 
+import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import React, { useState } from 'react';
@@ -17,12 +18,16 @@ const categoryFolderMap = {
 
 // EXAMPLE: Map folder -> attributes (customize this to your real data)
 const cardAttributeMap = {
-  Waterfall: ['Flow', 'Part-to-Whole'],
-  BarChart: ['Deviation', 'Magnitude'],
-  Histogram: ['Distribution'],
-  StackedArea: ['Temporal', 'Part-to-Whole'],
-  Sunburst: ['Part-to-Whole', 'Comparison'],
-  Treemap: ['Part-to-Whole', 'Comparison'],
+  Waterfall: ['Flow', 'Part-to-Whole', 'Magnitude', 'Bivariate', 'Interval', 'Ratio', 'Accumulation', 'Length', 'Time'],
+  BarChart: ['Magnitude', 'Bivariate', 'Comparison', 'Length', 'Interval', 'Ratio'],
+  Histogram: ['Distribution', 'Univariate', 'Interval', 'Ratio', 'Proportion', 'Area'],
+  StackedArea: ['Temporal', 'Bivariate', 'Comparison', 'Area', 'Ratio', 'Accumulation'],
+  Sunburst: ['Part-to-Whole', 'Multivariate', 'Proportion', 'Area', 'Interval', 'Ratio'],
+  Treemap: ['Part-to-Whole', 'Multivariate', 'Proportion', 'Area', 'Interval', 'Ratio'],
+  BubbleChart: ['Ranking', 'Multivariate', 'Ratio', 'Unitization', 'Area'],
+  ButterflyChart: ['Deviation', 'Bivariate', 'Nominal', 'Ordinal', 'Comparison', 'Length'],
+  Heatmap: ['Correlation', 'Multivariate', 'Interval', 'Unitization', 'Temperature'],
+  Sankey: ['Flow', 'Magnitude', 'Bivariate', 'Proportion', 'Interval', 'Ratio', 'Area'],
   // Add others if needed:
   // AnotherFolderName: ['Deviation', 'Ordinal', 'Comparison'],
 };
@@ -131,6 +136,7 @@ export default function Home({ analogyFolders }) {
     const cardAttrs = cardAttributeMap[folderName] || [];
 
     // If ANY of the selected filters are in the cardAttrs, show it
+    console.log(cardAttrs, selectedFilters);
     return cardAttrs.some((attr) => selectedFilters.includes(attr));
   };
 
@@ -198,17 +204,15 @@ export default function Home({ analogyFolders }) {
             const visible = isCardVisible(folderName);
 
             return (
-              <div
-                className={`${styles.analogyCard} ${!visible ? styles.hiddenCard : ''}`}
-                key={idx}
-              >
-                <div
-                  className={styles.cardImage}
-                  style={{ backgroundImage: `url("${imageUrl}")` }}
-                >
-                  <div className={styles.cardOverlay}>{folderName}</div>
-                </div>
-              </div>
+                <Link href={`/${folderName}`} key={folderName} className={`${styles.analogyCard} ${!visible ? styles.hiddenCard : ''}`}>
+                    <div
+                        key={idx}
+                        className={styles.cardImage}
+                        style={{ backgroundImage: `url("${imageUrl}")` }}
+                    >
+                            <div className={styles.cardOverlay}>{folderName}</div>
+                    </div>
+              </Link>
             );
           })}
         </div>

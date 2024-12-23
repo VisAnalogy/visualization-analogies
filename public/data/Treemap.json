@@ -1,0 +1,46 @@
+{
+    "name": "Neighborhoods",
+    "children": [
+      {
+        "name": "Downtown",
+        "children": [
+          {"name": "Main Street", "value": 8000},
+          {"name": "Business District", "value": 5000},
+          {"name": "Central Park Area", "value": 3000}
+        ]
+      },
+      {
+        "name": "Residential Area",
+        "children": [
+          {"name": "Beverly Hill", "value": 6000},
+          {"name": "Little Havana", "value": 4000},
+          {"name": "New Italy", "value": 3500},
+          {"name": "Chinatown", "value": 4500}
+        ]
+      },
+      {
+        "name": "Commercial District",
+        "children": [
+          {"name": "Mall Area", "value": 7000},
+          {"name": "Market Street", "value": 6500},
+          {"name": "Office Complex", "value": 3000}
+        ]
+      },
+      {
+        "name": "Industrial Area",
+        "children": [
+          {"name": "Factory Zone", "value": 2000},
+          {"name": "Warehouse District", "value": 1000}
+        ]
+      },
+      {
+        "name": "Suburbs",
+        "children": [
+          {"name": "Greenfield", "value": 5000},
+          {"name": "Lakeside", "value": 4000},
+          {"name": "Hillside", "value": 3500}
+        ]
+      }
+    ]
+}
+  
