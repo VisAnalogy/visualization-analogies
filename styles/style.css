@@ -1,0 +1,56 @@
+/* Container for the entire treemap analogy section */
+.analogy-container {
+    border: 3px dashed #a69f94;       /* sketchy dashed border */
+    background-color: #fdfaf3;        /* light cream background */
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #d4cbbc;    /* subtle 'paper-lift' effect */
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #333;
+  }
+  
+  
+  /* Sub-section headings */
+  h3.analogy-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem !important;
+    color: red;
+    text-shadow: 1px 1px 0 #faf8ec;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 0.3rem;
+  }
+  
+  /* Paragraph styles (if you want to add custom margins/line-heights) */
+  .analogy-container p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  /* Highlighted text with a faint background or different color */
+  .analogy-highlight {
+    background-color: #ffe8b3;
+    border-radius: 3px;
+    padding: 0 0.2rem;
+  }
+  
+  /* Custom list styling */
+  .analogy-list {
+    list-style-type: disc;    /* default bullet or any custom marker */
+    margin-left: 1.5rem;      /* indent */
+    margin-bottom: 1rem;
+  }
+  .analogy-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Example strong style if you want to mimic a slightly bolder “pencil” highlight */
+  .analogy-container strong {
+    font-weight: 600;
+    color: #444;
+    background-color: #fff7d9; /* subtle highlight behind bold text */
+    padding: 0 0.2rem;
+    border-radius: 3px;
+  }
+  

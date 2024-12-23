@@ -59,6 +59,8 @@
     flex-direction: column;
     padding: 1rem;
     box-sizing: border-box;
+    overflow-y: scroll;
+    padding-bottom: 10px;
   }
   
   .jsonPanel h3, .descriptionPanel h3 {
@@ -173,4 +175,5 @@
   .zoomButton:active {
     box-shadow: none;
   }
+
   
