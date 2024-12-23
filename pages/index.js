@@ -158,7 +158,7 @@ export default function Home({ analogyFolders }) {
                 <div className={styles.buttons}>
                   {category.items.map((item, j) => {
                     // Build the image path
-                    const imageUrl = `/${folderName}/${item}.png`;
+                    const imageUrl = `https://raw.githubusercontent.com/VisAnalogy/visualization-analogies/refs/heads/main/public/${folderName}/${item}.png`;
 
                     // Check if this filter is active
                     const isActive = selectedFilters.includes(item);
@@ -193,7 +193,7 @@ export default function Home({ analogyFolders }) {
         <div className={styles.analogyContainer}>
           {analogyFolders.map((folderName, idx) => {
             // For each folder, we show folderNameA.png
-            const imageUrl = `/finalQuestionare/${folderName}/${folderName}A.png`;
+            const imageUrl = `https://raw.githubusercontent.com/VisAnalogy/visualization-analogies/refs/heads/main/public/finalQuestionare/${folderName}/${folderName}A.png`;
             // Check if this folder should be visible or hidden
             const visible = isCardVisible(folderName);
 
