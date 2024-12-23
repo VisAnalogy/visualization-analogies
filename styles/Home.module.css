@@ -1,0 +1,254 @@
+/* styles/Home.module.css */
+
+/* Give a "paper-like" background color and maintain padding */
+.container {
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* Light cream background to mimic paper */
+  background-color: #faf8ec;
+  color: #333;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* ------------------------- */
+/* HEADER - 15vh             */
+/* ------------------------- */
+
+.header {
+  height: 15vh;
+  margin-bottom: 1rem; /* separate from main content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Optional: bottom border to "section off" the header */
+  border-bottom: 3px dashed #c4b999;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #333;
+
+  /* Slight text shadow to mimic a pencil stroke */
+  text-shadow: 1px 1px 0 #eee;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #7e7b77;
+  font-style: italic;
+
+  /* Light text shadow for a subtle sketched effect */
+  text-shadow: 1px 1px 0 #f7f4e9;
+}
+
+/* ------------------------- */
+/* MAIN CONTENT - 75vh       */
+/* ------------------------- */
+
+.mainContent {
+  height: 75vh;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem; /* space between left and right containers */
+  width: 96vw;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------ */
+/* LEFT: selection-container (20vw)     */
+/* ------------------------------------ */
+
+.selectionContainer {
+  width: 20vw;
+  overflow-y: auto;
+  overflow-x: hidden; /* hide horizontal scroll if any */
+  box-sizing: border-box;
+  padding: 1rem;
+
+  /* Border with a “hand-drawn” style, plus a light background */
+  border: 3px dashed #a69f94;
+  background-color: #fdfaf3;
+  border-radius: 8px;
+
+  /* “Lifted” look */
+  box-shadow: 4px 4px 0 #d4cbbc;
+}
+
+.selectionItem {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.selectionItem h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #505050;
+}
+
+/* The container for the items (buttons) */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Image button styling */
+.imageButton {
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  width: calc((100% / 4) - 0.75rem); /* 4 per row on larger screens */
+  aspect-ratio: 1 / 1; /* square */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.imageButton:hover {
+  opacity: 0.8;
+}
+
+.activeFilter {
+  filter: grayscale(100%);
+  box-shadow: none !important; /* remove the hover shadow if you like */
+  transform: none !important;
+  opacity: 0.8;
+  border: 2px solid #999; /* or any style to indicate "selected" */
+}
+
+.need{
+  border: #a69f94 3px solid;
+  border-radius: 5px;
+}
+
+
+
+/* On smaller screens, show 2 buttons in a row */
+@media (max-width: 768px) {
+  .imageButton {
+    width: calc((100% / 2) - 0.75rem);
+  }
+}
+
+.imageButton:hover {
+  opacity: 0.8;
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 0 #ccc;
+}
+
+/* RESPONSIVE: 2 buttons in a row on smaller screens */
+@media (max-width: 768px) {
+  .imageButton {
+    width: calc((100% / 2) - 0.75rem);
+  }
+}
+
+/* ------------------------------------ */
+/* RIGHT: analogy-container (72vw)      */
+/* ------------------------------------ */
+
+.analogyContainer {
+  width: 72vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  /* Border, background, “lifted” look */
+  border: 3px dashed #a69f94;
+  background-color: #fdfaf3;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #d4cbbc;
+}
+
+/* Each card has an aspect ratio of 16:9 and a slightly “sketchy” style */
+/* .analogyCard remains the same as before; show example below */
+.analogyCard {
+  flex: 0 0 calc((100% / 3) - 1rem);
+  aspect-ratio: 16 / 9;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  /* any shadow or border radius you want */
+  border-radius: 4px;
+  overflow: hidden; /* ensures child content doesn't spill over */
+  position: relative; /* so overlay can be absolutely positioned inside */
+  height: max-content;
+}
+
+/* The container for the background image */
+.cardImage {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; /* in case we need overlay inside */
+  display: flex;
+  align-items: flex-end; /* positions overlay at the bottom by default */
+}
+
+/* The overlay containing the folder name text */
+.cardOverlay {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  /* You could also position it at the top if you want:
+     align-items: flex-start; or top: 0; position absolute, etc. */
+}
+
+
+.analogyCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 3px 0 #aaa;
+}
+
+/* Card content text style */
+.cardContent {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* RESPONSIVE: 1 card per row on smaller screens */
+@media (max-width: 768px) {
+  .analogyCard {
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.hiddenCard {
+  visibility: hidden;    /* The card won't be seen */
+  pointer-events: none;  /* Optional: disable interactions if hidden */
+  display: none;
+  /* Alternatively, or in addition:
+     opacity: 0;
+     to fade it out while still keeping space in the layout
+  */
+}
+
