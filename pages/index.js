@@ -144,15 +144,48 @@ export default function Home({ analogyFolders }) {
     <div className={styles.container}>
       {/* Header */}
       <header className={styles.header}>
-        <h1>Visualization Analogy</h1>
         <h2>
-          From Reality to Recognition: Evaluating Visualization Analogies
-          <br />
-          for Novice Chart Comprehension
+          From Reality to Recognition: Evaluating Visualization Analogies for Novice Chart Comprehension
         </h2>
+        <h3>Authors: Oliver Huang, Patrick Lee, Carolina Nobre</h3>
+        <h4>EuroVis 2025 Education - Proceedings of the 27th Eurographics Conference on Visualization </h4>
       </header>
 
+      <div className='abstract'>
+        <h2>
+          Abstract
+        </h2>
+        <p>Novice learners often have difficulty learning new visualization types because they tend to interpret novel visualizations through
+the mental models of simpler charts they have previously encountered. Traditional visualization teaching methods, which usually
+rely on directly translating conceptual aspects of data into concrete data visualizations, often fail to attend to the needs of novice
+learners navigating this tension. To address this, we systematically explored how analogies can be used to help novices with
+chart comprehension. We introduced visualization analogies: visualizations that map data structures to real-world contexts
+to facilitate an intuitive understanding of novel chart types. We evaluated this pedagogical technique using a within-subject
+study N=128 where we taught 8 novel chart types with visualization analogies. Our findings show that visualization analogies
+improve visual analysis skills and help learners transfer their understanding to actual charts. They effectively introduce visual
+embellishments, cater to diverse learning preferences, and are preferred by novice learners over traditional chart visualizations.
+This study offers theoretical insights and practical tools to advance visualization education through analogical reasoning.</p>
+      </div>
+
+      <div className='resources'>
+        <h2>Resources</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/hivelabuoft/AnalogyVis" className="source" target="_blank" rel="noopener noreferrer">
+              Raw Data & Evaluation Code from User Study
+            </a>
+          </li>
+          <li>
+            <a href="https://rotman.az1.qualtrics.com/jfe/form/SV_5aNdezrUixEB0rQ" className="source" target="_blank" rel="noopener noreferrer">
+              Qualtrics Survey Questions
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    
       {/* Main content */}
+      <h2>Visualization Analogies</h2>
       <div className={styles.mainContent}>
         {/* Left side: selection-container */}
         <div className={styles.selectionContainer}>

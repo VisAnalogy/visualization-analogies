@@ -7,15 +7,60 @@
   
   
   /* Sub-section headings */
-  h3.analogy-subtitle {
+  header h2 {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #7e7b77;
+    font-size: 1.5rem;
+    color: #000000;
     text-shadow: 1px 1px 0 #faf8ec;
     border-bottom: 1px dashed #ccc;
     padding-bottom: 0.3rem;
   }
+
+  h3 {
+    font-size: 1rem;
+    color: #333;
+    text-shadow: 1px 1px 0 #faf8ec;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 0.1rem;
+    margin-top: 0.5rem;
+  }
+
+  h4 {
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  .abstract h2, .resources h2{
+    border-bottom: 3px dashed #c4b999;
+    margin-top: 1rem;
+  }
+
+  .abstract h2{
+    margin-bottom: 1rem;
+  }
+
+  .resources ul {
+    list-style-type: disc; /* Default bullet point */
+    padding-left: 1.5rem;  /* Adds some left padding */
+  }
+  
+  .resources li {
+    margin-bottom: 0.5rem; /* Adds spacing between list items */
+  }
+  
+  .source {
+    margin-left: 0.3rem;
+    text-decoration: none; /* Removes underline */
+    color: #007bff; /* Bootstrap blue */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .source:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
   
   /* Paragraph styles (if you want to add custom margins/line-heights) */
   .analogy-container p {
